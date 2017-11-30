@@ -1,6 +1,7 @@
 .container{
   display: flex;
   flex-wrap: wrap;
+  border: solid 5px black;
 }
 
 .card{
@@ -19,10 +20,12 @@
 }
 .card p{
   opacity: 0;
-  font-size: 20px;
+  font-size: 50px;
   transform: rotateX(0deg);
   transition: all 0.5s ease-in;
   text-align: center;
+  font-family: 'Press Start 2P', cursive;
+
 }
 /*.card img{
   opacity: 0;
@@ -46,4 +49,42 @@
 
 .completed{
   background-color: green;
+}
+
+button{
+  font-size: 20px;
+  margin: 20px 20px 20px 20px;
+}
+
+.shake-horizontal {
+  animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+@keyframes shake-horizontal {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  80% {
+    -webkit-transform: translateX(8px);
+            transform: translateX(8px);
+  }
+  90% {
+    -webkit-transform: translateX(-8px);
+            transform: translateX(-8px);
+  }
 }
