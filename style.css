@@ -4,8 +4,8 @@
 }
 
 .card{
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   background-color: hotpink;
   margin: 10px 10px 10px 10px;
   transform: rotateX(0deg);
@@ -24,6 +24,13 @@
   transition: all 0.5s ease-in;
   text-align: center;
 }
+/*.card img{
+  opacity: 0;
+  width: 150px;
+  height: 150px;
+  transform: rotateX(0deg);
+  transition: all 0.5s ease-in;
+}*/
 
 
 .showNum p{
@@ -31,6 +38,11 @@
   transform: rotateX(180deg);
   transition: all 0.5s ease-in;
 }
+/*.showNum img{
+  opacity: 1;
+  transform: rotateX(180deg);
+  transition: all 0.5s ease-in;
+}*/
 
 .completed{
   background-color: green;

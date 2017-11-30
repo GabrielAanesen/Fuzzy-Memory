@@ -1,59 +1,75 @@
 const cards = document.querySelectorAll('.card');
+const button = document.querySelector('button');
 
+var container = document.querySelector('.container')
+var emptyarray = [];
+var complete = [];
+var counter = 0;
 
-const cardArray = Array.from(cards);
-
-
-const randomCard = Math.floor((Math.random() * cardArray.length) + 1);
-
-// var randCat = "images/cat"+Math.floor((Math.random() * 3) + 1)+".jpg"
-//
-//
-// var image = document.getElementsByClassName("cat");
-// image[0].src = randCat;
-
-emptyarray = [];
-complete = [];
+for (var i = container.children.length; i >= 0; i--) {
+       container.appendChild(container.children[Math.random() * i | 0]);
+     }
 
 Array.from(cards).forEach( (card)=>{
+  console.log(counter);
+  button.addEventListener('click', (event)=>{
+    card.classList.remove("flip");
+    card.classList.remove("showNum");
+    card.classList.remove("completed");
+    counter = 0;
+    for (var i = container.children.length; i >= 0; i--) {
+           container.appendChild(container.children[Math.random() * i | 0]);
+         }
+    })
   card.addEventListener('click', (event)=>{
     emptyarray.push(event.target.dataset.card);
     complete.push(card);
-    card.classList.toggle("flip");
-    card.classList.toggle("showNum");
-    if (emptyarray.length == 2) {
-      if (emptyarray[0] == emptyarray[1]) {
-        console.log('ITS A MATCH!');
-        complete[0].classList.add("completed");
-        complete[1].classList.add("completed");
-        emptyarray = [];
-        complete = [];
+    card.classList.add("flip");
+    card.classList.add("showNum");
+    if (emptyarray.length === 2) {
+      if (emptyarray[0] === emptyarray[1]) {
+            complete[0].classList.add("completed");
+            complete[1].classList.add("completed");
+            emptyarray = [];
+            complete = [];
+            counter++
+            if (counter === 9) {
+              setTimeout(function(){
+              window.alert('You are the best!');
+              counter = 0;
+            },1000);
+            }
       } else {
-        console.log("try again");
-        complete[0].classList.remove("flip");
-        complete[1].classList.remove("flip");
-        complete[0].classList.remove("showNum");
-        complete[1].classList.remove("showNum");
-        // setTimeout(function(){
-        //   complete = [];
-        //
-        //
-        // },1000);
-
-        emptyarray = [];
-        complete = [];
-
+          setTimeout(function(){
+            complete[1].classList.remove("flip");
+            complete[1].classList.remove("showNum");
+            complete[0].classList.remove("showNum");
+            complete[0].classList.remove("flip");
+            emptyarray = [];
+            complete = [];
+        },500);
       }
     }
   })
 })
 
-const button = document.querySelector('button');
-
-Array.from(cards).forEach( (card)=>{
-  button.addEventListener('click', (event)=>{
-    card.classList.remove("flip");
-    card.classList.remove("showNum");
-    card.classList.remove("completed");
-    })
-    })
+// const divArray = [
+//   '<div class="card" data-card="1"><p>1</p></div>',
+//   '<div class="card" data-card="1"><p>1</p></div>',
+//   '<div class="card" data-card="2"><p>2</p></div>',
+//   '<div class="card" data-card="2"><p>2</p></div>',
+//   '<div class="card" data-card="3"><p>3</p></div>',
+//   '<div class="card" data-card="3"><p>3</p></div>',
+//   '<div class="card" data-card="4"><p>4</p></div>',
+//   '<div class="card" data-card="4"><p>4</p></div>',
+//   '<div class="card" data-card="5"><p>5</p></div>',
+//   '<div class="card" data-card="5"><p>5</p></div>',
+//   '<div class="card" data-card="6"><p>6</p></div>',
+//   '<div class="card" data-card="6"><p>6</p></div>',
+//   '<div class="card" data-card="7"><p>7</p></div>',
+//   '<div class="card" data-card="7"><p>7</p></div>',
+//   '<div class="card" data-card="8"><p>8</p></div>',
+//   '<div class="card" data-card="8"><p>8</p></div>',
+//   '<div class="card" data-card="9"><p>9</p></div>',
+//   '<div class="card" data-card="9"><p>9</p></div>'
+// ]
