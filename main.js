@@ -1,7 +1,3 @@
-const cards = document.querySelectorAll('.card');
-const button = document.querySelector('button');
-
-const cardsArray = Array.from(cards);
 var container = document.querySelector('.container')
 
 let counter = 0;
@@ -13,6 +9,10 @@ for (var i = container.children.length; i >= 0; i--) {
      }
 
 //FUNCTION FOR CHECKING MATCHES AND RESETTING IF WRONG CARDS ARE MATCHED
+
+const cards = document.querySelectorAll('.card');
+const cardsArray = Array.from(cards);
+
 
 emptyarray = [];
 complete = [];
@@ -58,9 +58,11 @@ cardsArray.forEach( (card)=>{
 
 //RESTART BUTTON, ADDS ANIMATION TO CARDS AND RANDOMIZE CARD POSISTION AGAIN
 
+const button = document.querySelector('.restart');
 
 cardsArray.forEach( (card)=>{
 button.addEventListener('click', (event)=>{
+  console.log('hej');
   card.classList.remove("flip");
   card.classList.remove("showNum");
   card.classList.remove("completed");
