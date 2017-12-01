@@ -6,9 +6,13 @@ var container = document.querySelector('.container')
 
 let counter = 0;
 
+//RANDOMIZE FUNCTION FOR CARDS POSISTION
+
 for (var i = container.children.length; i >= 0; i--) {
        container.appendChild(container.children[Math.random() * i | 0]);
      }
+
+//FUNCTION FOR CHECKING MATCHES AND RESETTING IF WRONG CARDS ARE MATCHED
 
 emptyarray = [];
 complete = [];
@@ -50,6 +54,10 @@ cardsArray.forEach( (card)=>{
     }
   })
 })
+
+//RESTART BUTTON, ADDS ANIMATION TO CARDS AND RANDOMIZE CARD POSISTION AGAIN
+
+
 cardsArray.forEach( (card)=>{
 button.addEventListener('click', (event)=>{
   card.classList.remove("flip");
