@@ -10,8 +10,12 @@ body{
   flex-wrap: wrap;
   border: solid 5px black;
   max-width: 1020px;
+  /*max-height: 510px;*/
   margin-top: 40px;
+
 }
+
+
 
 .card{
   width: 150px;
@@ -20,15 +24,24 @@ body{
   margin: 10px 10px 10px 10px;
   transform: rotateX(0deg);
   transition: all 0.5s ease-in;
-  box-shadow: 10px 10px 5px #888888;
+  box-shadow: 5px 5px 5px #888888;
   border-radius: 10px;
 
 }
+@media screen and (max-width: 768px){
+  .container {
+    max-width: 480px;
+  }
+  .card {
+    width: 70px;
+    height: 70px;
+    margin: 5px 5px 5px 5px;
 
+  }
+}
 .flip{
   background-color: red;
   transform: rotateX(180deg);
-  transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;
 }
 .card p{
