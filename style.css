@@ -10,7 +10,7 @@ body{
   flex-wrap: wrap;
   border: solid 5px black;
   max-width: 1020px;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .card{

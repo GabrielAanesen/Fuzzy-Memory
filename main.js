@@ -64,10 +64,10 @@ button.addEventListener('click', (event)=>{
   card.classList.remove("showNum");
   card.classList.remove("completed");
   card.classList.add("rotate");
+  container.classList.add("shake-horizontal");
   emptyarray = [];
   complete = [];
   counter = 0;
-  container.classList.add("shake-horizontal");
   setTimeout(function(){
     container.classList.remove("shake-horizontal");
     card.classList.remove("rotate");
