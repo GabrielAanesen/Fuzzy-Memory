@@ -26,6 +26,7 @@ cardsArray.forEach( (card)=>{
     });
   })
   card.addEventListener('click', (event)=>{
+    console.log(event.target.dataset.number);
     emptyarray.push(event.target.dataset.number);
     complete.push(card);
     if (emptyarray.length === 2) {
