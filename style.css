@@ -1,7 +1,16 @@
+body{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
 .container{
   display: flex;
   flex-wrap: wrap;
   border: solid 5px black;
+  max-width: 1020px;
+  margin-top: 60px;
 }
 
 .card{
@@ -11,11 +20,14 @@
   margin: 10px 10px 10px 10px;
   transform: rotateX(0deg);
   transition: all 0.5s ease-in;
+  box-shadow: 10px 10px 5px #888888;
+
 }
 
 .flip{
   background-color: salmon;
   transform: rotateX(180deg);
+  transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;
 }
 .card p{
@@ -26,27 +38,14 @@
   transition: all 0.5s ease-in;
   text-align: center;
   font-family: 'Press Start 2P', cursive;
-
 }
-/*.card img{
-  opacity: 0;
-  width: 150px;
-  height: 150px;
-  transform: rotateX(0deg);
-  transition: all 0.5s ease-in;
-}*/
-
 
 .showNum p{
   opacity: 1;
   transform: rotateX(180deg);
   transition: all 0.5s ease-in;
 }
-/*.showNum img{
-  opacity: 1;
-  transform: rotateX(180deg);
-  transition: all 0.5s ease-in;
-}*/
+
 
 .completed{
   background-color: green;
@@ -88,4 +87,8 @@ button{
     -webkit-transform: translateX(-8px);
             transform: translateX(-8px);
   }
+}
+
+.rotate{
+  transform: rotate(360deg);
 }

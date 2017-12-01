@@ -10,23 +10,20 @@ for (var i = container.children.length; i >= 0; i--) {
        container.appendChild(container.children[Math.random() * i | 0]);
      }
 
-cardsArray.forEach( (card)=>{
-  card.addEventListener('click', ()=>{
-    card.classList.add("flip");
-    card.classList.add("showNum");
-  });
-})
-
 emptyarray = [];
 complete = [];
 counter = 0;
 
 cardsArray.forEach( (card)=>{
+  cardsArray.forEach( (card)=>{
+    card.addEventListener('click', ()=>{
+      card.classList.add("flip");
+      card.classList.add("showNum");
+    });
+  })
   card.addEventListener('click', (event)=>{
-    console.log(event.target.dataset.number);
     emptyarray.push(event.target.dataset.number);
     complete.push(card);
-    // console.log(emptyarray);
     if (emptyarray.length === 2) {
       if (emptyarray[0] === emptyarray[1]) {
             complete[0].classList.add("completed");
@@ -58,12 +55,15 @@ button.addEventListener('click', (event)=>{
   card.classList.remove("flip");
   card.classList.remove("showNum");
   card.classList.remove("completed");
+  card.classList.add("rotate");
   emptyarray = [];
   complete = [];
   counter = 0;
   container.classList.add("shake-horizontal");
   setTimeout(function(){
     container.classList.remove("shake-horizontal");
+    card.classList.remove("rotate");
+
   },500);
 
   setTimeout(function(){
