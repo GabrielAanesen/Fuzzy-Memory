@@ -81,6 +81,10 @@ p{
   .card p{
     font-size: 27px;
   }
+  .card img{
+    width: 85px;
+    height: 85px;
+  }
 }
 
 .showNum p{
