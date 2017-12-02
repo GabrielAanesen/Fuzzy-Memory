@@ -2,6 +2,9 @@ var container = document.querySelector('.container')
 
 let counter = 0;
 
+console.log(getTime());
+
+
 //RANDOMIZE FUNCTION FOR CARDS POSISTION
 
 for (var i = container.children.length; i >= 0; i--) {
@@ -17,6 +20,8 @@ const cardsArray = Array.from(cards);
 emptyarray = [];
 complete = [];
 counter = 0;
+
+
 
 cardsArray.forEach( (card)=>{
   cardsArray.forEach( (card)=>{
@@ -50,7 +55,7 @@ cardsArray.forEach( (card)=>{
             complete[1].classList.remove("showNum");
             emptyarray = [];
             complete = [];
-        },500);
+        },900);
       }
     }
   })
