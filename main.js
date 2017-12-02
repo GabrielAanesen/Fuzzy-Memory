@@ -2,7 +2,12 @@ var container = document.querySelector('.container')
 
 let counter = 0;
 
-console.log(getTime());
+
+
+const now = new getTime();
+
+// View the output
+console.log(now);
 
 
 //RANDOMIZE FUNCTION FOR CARDS POSISTION
