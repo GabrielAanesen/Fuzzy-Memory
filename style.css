@@ -38,6 +38,8 @@ p{
   background-color: red;
   transform: rotateX(180deg);
   transition: all 0.5s ease-in;
+  pointer-events: none;
+
 }
 .card p{
   pointer-events: none;
@@ -152,4 +154,8 @@ button{
   text-align: center;
   margin-top: 20px;
   border: 5px solid black;
+}
+
+.stop{
+  pointer-events: none;
 }

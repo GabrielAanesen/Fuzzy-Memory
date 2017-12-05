@@ -1,13 +1,5 @@
 var container = document.querySelector('.container')
 
-let counter = 0;
-
-
-
-const now = new getTime();
-
-// View the output
-console.log(now);
 
 
 //RANDOMIZE FUNCTION FOR CARDS POSISTION
@@ -40,6 +32,10 @@ cardsArray.forEach( (card)=>{
     emptyarray.push(event.target.dataset.number);
     complete.push(card);
     if (emptyarray.length === 2) {
+        container.classList.add("stop");
+          setTimeout(function(){
+        container.classList.remove("stop");
+        },1000);
       if (emptyarray[0] === emptyarray[1]) {
             complete[0].classList.add("completed");
             complete[1].classList.add("completed");
@@ -60,7 +56,7 @@ cardsArray.forEach( (card)=>{
             complete[1].classList.remove("showNum");
             emptyarray = [];
             complete = [];
-        },900);
+        },700);
       }
     }
   })
