@@ -1,7 +1,5 @@
 var container = document.querySelector('.container')
 
-
-
 //RANDOMIZE FUNCTION FOR CARDS POSISTION
 
 for (var i = container.children.length; i >= 0; i--) {
@@ -21,21 +19,18 @@ counter = 0;
 
 
 cardsArray.forEach( (card)=>{
-  cardsArray.forEach( (card)=>{
     card.addEventListener('click', ()=>{
       card.classList.add("flip");
       card.classList.add("showNum");
     });
-  })
   card.addEventListener('click', (event)=>{
-    console.log(event.target.dataset.number);
     emptyarray.push(event.target.dataset.number);
     complete.push(card);
     if (emptyarray.length === 2) {
         container.classList.add("stop");
           setTimeout(function(){
         container.classList.remove("stop");
-        },1000);
+      },900);
       if (emptyarray[0] === emptyarray[1]) {
             complete[0].classList.add("completed");
             complete[1].classList.add("completed");
@@ -68,7 +63,6 @@ const button = document.querySelector('.restart');
 
 cardsArray.forEach( (card)=>{
 button.addEventListener('click', (event)=>{
-  console.log('hej');
   card.classList.remove("flip");
   card.classList.remove("showNum");
   card.classList.remove("completed");

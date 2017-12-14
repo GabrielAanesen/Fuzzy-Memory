@@ -15,6 +15,7 @@ p{
   max-width: 1020px;
   /*max-height: 510px;*/
   margin-top: 40px;
+  border-radius: 10px;
 
 }
 
@@ -154,6 +155,7 @@ button{
   text-align: center;
   margin-top: 20px;
   border: 5px solid black;
+  border-radius: 10px;
 }
 
 .stop{
